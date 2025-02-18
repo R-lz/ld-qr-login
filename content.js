@@ -51,16 +51,12 @@ if (window.location.hostname.includes('linux.do')) {
   // 监听来自 popup 的消息
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'getPageData') {
-      // 获取 csrfToken
       let csrfToken = '';
-      
-      // 尝试从 meta 标签获取
       const metaToken = document.querySelector('meta[name="csrf-token"]');
       if (metaToken) {
         csrfToken = metaToken.getAttribute('content');
       }
       
-      // 如果 meta 标签中没有，尝试从表单中获取
       if (!csrfToken) {
         const tokenInput = document.querySelector('input[name="csrf-token"]') || 
                           document.querySelector('input[name="csrfToken"]') ||
@@ -69,8 +65,7 @@ if (window.location.hostname.includes('linux.do')) {
           csrfToken = tokenInput.value;
         }
       }
-
-      // 如果还是没有，尝试从全局变量获取
+      
       if (!csrfToken && window.csrfToken) {
         csrfToken = window.csrfToken;
       }
