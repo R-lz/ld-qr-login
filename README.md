@@ -18,7 +18,7 @@
 
 1. 克隆此仓库到本地
 ```bash
-git clone [https://github.com/R-lz/ld-qr-login.git]
+git clone https://github.com/R-lz/ld-qr-login.git
 ```
 2. 打开 Chrome 浏览器，进入扩展管理页面 (`chrome://extensions/`)
 3. 开启右上角的"开发者模式"
@@ -32,3 +32,6 @@ git clone [https://github.com/R-lz/ld-qr-login.git]
 3. 使用 LD-App 在App的登录页面上,点击扫码,扫描生成的二维码即可完成登录
 
 
+## 最后
+
+> 插件位置有点碍事，你可以修改位置或登录完后可以卸载或停用插件

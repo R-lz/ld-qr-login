@@ -37,15 +37,12 @@ if (window.location.hostname.includes('linux.do')) {
   button.addEventListener('mouseover', () => {
     button.style.transform = 'translateY(-2px)';
     button.style.boxShadow = '0 4px 8px rgba(0,0,0,0.3)';
-    tooltip.style.opacity = '1';
-    tooltip.style.transform = 'translateY(0)';
   });
 
   button.addEventListener('mouseout', () => {
     button.style.transform = 'translateY(0)';
     button.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
-    tooltip.style.opacity = '0';
-    tooltip.style.transform = 'translateY(10px)';
+
   });
 
   // 监听来自 popup 的消息
