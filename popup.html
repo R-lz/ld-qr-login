@@ -48,6 +48,21 @@
       box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
     }
 
+    #copyButton {
+      margin-top: 12px;
+      background: linear-gradient(45deg, #4CAF50, #81C784);
+    }
+
+    #copyButton:hover {
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     .icon {
       width: 16px;
       height: 16px;
@@ -77,17 +92,29 @@
 </head>
 
 <body>
-  <button id="generateQR">
-    <img src="icons/icon16.png" class="icon" alt="icon">
-    生成二维码
-  </button>
+  <div class="button-container">
+    <button id="generateQR">
+      <img src="icons/icon-white.png" class="icon" alt="icon">
+      生成二维码
+    </button>
+    
+    <button id="copyButton">
+      <img src="icons/copy.png" class="icon" alt="icon">
+      复制内容到剪贴板
+    </button>
+
+    <!-- <button id="debugButton" style="background: linear-gradient(45deg, #9C27B0, #BA68C8);">
+      <span style="font-size: 16px;">🔧</span>
+      复制原始数据
+    </button> -->
+    
+  </div>
   <div id="qrcode"></div>
   <div class="tips">
-    点击生成二维码后，在App的登录页面点击扫码
-    <br>
-    请不要把二维码发送给<span class="warning">任何人</span>
+    若提示错误,刷新页面重试,不要把二维码发送给<span class="warning">任何人</span>
   </div>
+  <script src="pako.min.js"></script>
+  <script src="compression.js"></script>
   <script src="popup.js"></script>
 </body>
-
 </html>

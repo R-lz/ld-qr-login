@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "QR-Login",
-  "version": "1.0.0",
+  "name": "Generate QR code",
+  "version": "1.0.1",
   "description": "生成登录的二维码",
   "icons": {
     "16": "icons/icon16.png",
@@ -18,9 +18,12 @@
     "https://*.linux.do/*"
   ],
   "web_accessible_resources": [{
-    "resources": ["icons/*"],
-    "matches": ["https://linux.do/*"]
+    "resources": ["icons/*", "*.js"],
+    "matches": ["https://linux.do/*", "https://*.linux.do/*"]
   }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -31,7 +34,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://linux.do/*"],
+      "matches": ["https://linux.do/*", "https://*.linux.do/*"],
       "js": ["content.js"]
     }
   ],
